@@ -1,16 +1,11 @@
 import { expect, test } from '@playwright/test'
 import { StatusCodes } from 'http-status-codes'
 
-//endpoint PUT
-//
-//
-//
-// /test-orders/{id}
-
+//API key
 const requestHeaders = {
   api_key: '1234567890123456',
 }
-
+//Body
 const requestBody = {
   status: 'OPEN',
   courierId: 0,
@@ -19,6 +14,15 @@ const requestBody = {
   comment: 'string',
   id: 0,
 }
+
+//Tests
+
+//endpoint PUT
+//
+//
+//
+// /test-orders/{id}
+
 test.describe('API Tests for Mocked Order Operations', () => {
   test.describe('PUT Method API Tests for Update an order by providing an order ID', () => {
     test('2.1 put an order with correct id should receive code 200', async ({ request }) => {
